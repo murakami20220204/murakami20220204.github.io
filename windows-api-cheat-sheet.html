@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<link rel="icon" type="image/png" href="./favicon.png" />
+	<link rel="stylesheet" type="text/css" href="./index.css" />
+	<title>Windows API チート シート</title>
+</head>
+<body>
+	<header>
+		<ul>
+			<li>
+				<a href="./index.html">Index</a>
+			</li>
+		</ul>
+	</header>
+	<main>
+		<article>
+			<h1>Windows API チート シート</h1>
+			<section>
+				<h2>ウィンドウ メッセージ</h2>
+				<section>
+					<h3>メッセージ駆動の良いところ</h3>
+					<ul>
+						<li>
+							<code>PostMessage</code> 関数を用いて指定した処理を遅延実行できる。
+						</li>
+						<li>
+							各ウィンドウを疎結合にできる。
+							ヘッダー ファイルに関数を書かずにすむ。
+						</li>
+					</ul>
+					<p><code>PostMessage</code> 関数を用いて指定した処理を遅延実行できる。</p>
+				</section>
+				<section>
+					<h3>メッセージを使用</h3>
+					<p>
+						ユーザーは新しくユーザー メッセージまたはアプリケーション メッセージを定義できる。
+						メッセージを定義する場合は既存のメッセージとカチ合わないようにすること。
+					</p>
+					<table>
+						<caption>ウィンドウ メッセージ</caption>
+						<thead>
+							<tr>
+								<th rowspan="2" scope="col">区分</th>
+								<th colspan="2" scope="col">範囲</th>
+								<th rowspan="2" scope="col">名前</th>
+								<th rowspan="2" scope="col">説明</th>
+							</tr>
+							<tr>
+								<th scope="col">最小</th>
+								<th scope="col">最大</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>システム</td>
+								<td>0</td>
+								<td><code>0x399</code></td>
+								<td></td>
+								<td>システムで使用するために予約されている。</td>
+							</tr>
+							<tr>
+								<td>ユーザー</td>
+								<td><code>0x400</code></td>
+								<td><code>0x7999</code></td>
+								<td><code>WM_USER</code></td>
+								<td>
+									プライベート ウィンドウ クラスで使用され、コントロールに固有のメッセージが定義されている。
+									<ul>
+										<li>コモン コントロールによって <code>0x700</code> 付近のメッセージが使用されている。</li>
+										<li>ユーザーが定義したウィンドウ クラスについて、<code>IsDialogMessage</code> 関数を実行する場合は <code>0x400</code> 付近のメッセージが使用される。</li>
+									</ul>
+									
+								</td>
+							</tr>
+							<tr>
+								<td rowspan="2">アプリケーション</td>
+								<td><code>0x8000</code></td>
+								<td><code>0xBFFF</code></td>
+								<td rowspan="2"><code>WM_APP</code></td>
+								<td>Windows バージョン 4 以降としてマークしているアプリケーションで使用できるメッセージ。</td>
+							</tr>
+							<tr>
+								<td><code>0xC000</code></td>
+								<td><code>0xFFFF</code></td>
+								<td>
+									<code>RegisterWindowMessage</code> 関数を呼び出すアプリケーションで使用する文字列メッセージ。
+								</td>
+							</tr>
+							<tr>
+								<td>システム</td>
+								<td><code>0x10000</code></td>
+								<td></td>
+								<td></td>
+								<td>システムによって予約されている。</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</section>
+		</article>
+	</main>
+	<footer>
+		<ul>
+			<li>Copyright &copy; Taichi Murakami.</li>
+		</ul>
+	</footer>
+</body>
+</html>
