@@ -1,0 +1,38 @@
+﻿a {
+	color: blue;
+}
+a:visited {
+	color: purple;
+}
+footer {
+	border-block-start: 1px solid black;
+}
+footer ul {
+	list-style: none;
+	padding-inline-start: 0;
+}
+header {
+	border-block-end: 1px solid black;
+}
+html {
+	background-color: white;
+	color: black;
+}
+@media (prefers-color-scheme: dark) {
+	a {
+		color: yellow;
+	}
+	a:visited {
+		color: green;
+	}
+	footer {
+		border-block-start-color: white;
+	}
+	header {
+		border-block-end-color: white;
+	}
+	html {
+		background-color: black;
+		color: white;
+	}
+}
