@@ -1,0 +1,594 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<link rel="icon" type="image/png" href="./favicon.png" />
+	<link rel="stylesheet" type="text/css" href="./index.css" />
+	<title>CSPROJ ファイル書式</title>
+</head>
+<body>
+	<header>
+		<ul>
+			<li>
+				<a href="./index.html">Index</a>
+			</li>
+		</ul>
+	</header>
+	<main>
+		<article>
+			<h1>CSPROJ ファイル書式</h1>
+			<ul>
+				<li><a href="https://learn.microsoft.com/ja-jp/visualstudio/msbuild/msbuild-project-file-schema-reference?view=vs-2022">MSBuild プロジェクト ファイル スキーマ リファレンス - MSBuild | Microsoft Learn</a></li>
+			</ul>
+			<section>
+				<h2>構造</h2>
+				<ul>
+					<li>
+						<a href="#Project">Project</a>
+						<ul>
+							<li>
+								<a href="#ItemGroup">ItemGroup</a>
+								<ul>
+									<li><a href="#Content">Content</a></li>
+									<li>
+										<a href="#Compile">Compile</a>
+										<ul>
+											<li><a href="#AutoGen">AutoGen</a></li>
+											<li><a href="#DependentUpon">DependentUpon</a></li>
+											<li><a href="#DesignTime">DesignTime</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#EmbeddedResource">EmbeddedResource</a>
+										<ul>
+											<li><a href="#Generator">Generator</a></li>
+											<li><a href="#LastGenOutput">LastGenOutput</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#PropertyGroup">PropertyGroup</a>
+								<ul>
+									<li><a href="#ApplicationIcon">ApplicationIcon</a></li>
+									<li><a href="#ApplicationManifest">ApplicationManifest</a></li>
+									<li><a href="#AssemblyVersion">AssemblyVersion</a></li>
+									<li><a href="#Authors">Authors</a></li>
+									<li><a href="#Company">Company</a></li>
+									<li><a href="#Copyright">Copyright</a></li>
+									<li><a href="#Description">Description</a></li>
+									<li><a href="#FileVersion">FileVersion</a></li>
+									<li><a href="#GeneratePackageOnBuild">GeneratePackageOnBuild</a></li>
+									<li><a href="#ImplicitUsings">ImplicitUsings</a></li>
+									<li><a href="#Nullable">Nullable</a></li>
+									<li><a href="#OutputType">OutputType</a></li>
+									<li><a href="#PackageIcon">PackageIcon</a></li>
+									<li><a href="#PackageId">PackageId</a></li>
+									<li><a href="#PackageProjectUrl">PackageProjectUrl</a></li>
+									<li><a href="#PackageReadmeFile">PackageReadmeFile</a></li>
+									<li><a href="#PackageReleaseNotes">PackageReleaseNotes</a></li>
+									<li><a href="#PackageTags">PackageTags</a></li>
+									<li><a href="#Product">Product</a></li>
+									<li><a href="#RepositoryType">RepositoryType</a></li>
+									<li><a href="#RepositoryUrl">RepositoryUrl</a></li>
+									<li><a href="#TargetFramework">TargetFramework</a></li>
+									<li><a href="#Title">Title</a></li>
+									<li><a href="#UseWindowsForms">UseWindowsForms</a></li>
+									<li><a href="#Version">Version</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>要素</h2>
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">分類</th>
+							<th scope="col">名前</th>
+							<th scope="col">説明</th>
+							<th scope="col">要素</th>
+							<th scope="col">備考</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id="AutoGen">
+							<td rowspan="11"></td>
+							<td rowspan="11"></td>
+							<td rowspan="11"></td>
+							<td>AutoGen</td>
+							<td>&lt;AutoGen&gt; True &lt;/AutoGen&gt;</td>
+						</tr>
+						<tr id="Compile">
+							<td>Compile</td>
+							<td>&lt;Compile Update="WinFormsApp1.Designer.cs"&gt;</td>
+						</tr>
+						<tr id="Content">
+							<td>Content</td>
+							<td>&lt;Content Include="Icon1.ico" /&gt;</td>
+						</tr>
+						<tr id="DependentUpon">
+							<td>DependentUpon</td>
+							<td>&lt;DependentUpon&gt; WinFormsApp1.resx &lt;/DependentUpon&gt;</td>
+						</tr>
+						<tr id="DesignTime">
+							<td>DesignTime</td>
+							<td>&lt;DesignTime&gt; True &lt;/DesignTime&gt;</td>
+						</tr>
+						<tr id="EmbeddedResource">
+							<td>EmbeddedResource</td>
+							<td>&lt;EmbeddedResource Update="WinFormsApp1.resx"&gt;</td>
+						</tr>
+						<tr id="Generator">
+							<td>Generator</td>
+							<td>&lt;Generator&gt; ResXFileCodeGenerator &lt;/Generator&gt;</td>
+						</tr>
+						<tr id="ItemGroup">
+							<td>ItemGroup</td>
+							<td></td>
+						</tr>
+						<tr id="LastGenOutput">
+							<td>LastGenOutput</td>
+							<td>&lt;LastGenOutput&gt; WinFormsApp1.Designer.cs &lt;/LastGenOutput&gt;</td>
+						</tr>
+						<tr id="Project">
+							<td>Project</td>
+							<td>&lt;Project Sdk="Microsoft.NET.Sdk"&gt;</td>
+						</tr>
+						<tr id="PropertyGroup">
+							<td>PropertyGroup</td>
+							<td>&lt;PropertyGroup Condition="'$(Configuration) | $(Platform)' == 'Debug | AnyCPU'"&gt;</PropertyGroup></td>
+						</tr>
+						<tr id="OutputType">
+							<td rowspan="10">アプリケーション全般</td>
+							<td>出力の種類</td>
+							<td>ビルドするアプリケーションの種類を指定します。</td>
+							<td>OutputType</td>
+							<td>&lt;OutputType&gt; WinExe &lt;/OutputType&gt;</td>
+						</tr>
+						<tr id="TargetFramework">
+							<td>ターゲット フレームワーク</td>
+							<td>アプリケーションの対象となる .NET のバージョンを指定します。このオプションには、コンピューターにインストールされている .NET のバージョンに応じて異なる値を指定できます。</td>
+							<td rowspan="3">TargetFramework</td>
+							<td rowspan="3">&lt;TargetFramework&gt; net7.0-windows &lt;/TargetFramework&gt;</td>
+						</tr>
+						<tr>
+							<td>ターゲット OS</td>
+							<td rowspan="2">このプロジェクトの対象になるオペレーティング システムのバージョンを指定します。</td>
+						</tr>
+						<tr>
+							<td>ターゲット OS バージョン</td>
+						</tr>
+						<tr id="SupportedOSPlatformVersion">
+							<td>サポートされている OS バージョン</td>
+							<td>プロジェクトが実行される最小 OS バージョンを指定します。指定しない場合、ターゲット OS のバージョン値が暗黙的に指定されます。以前のバージョンを使用する場合、それより新しいバージョンの API にガードを追加するにはコードが必要です。</td>
+							<td>SupportedOSPlatformVersion</td>
+							<td>&lt;SupportedOSPlatformVersion&gt; 8.0 &lt;/SupportedOSPlatformVersion&gt;</td>
+						</tr>
+						<tr id="UseWindowsForms">
+							<td>Windows フォーム</td>
+							<td>このプロジェクトで Windows フォームを有効にします。</td>
+							<td>UseWindowsForms</td>
+							<td>&lt;UseWindowsForms&gt; true &lt;/UseWindowsForms&gt;</td>
+						</tr>
+						<tr id="UseWPF">
+							<td>Windows Presentation Foundation</td>
+							<td>このプロジェクトで WPF を有効にします。</td>
+							<td>UseWPF</td>
+							<td>&lt;UseWPF&gt; True &lt;/UseWPF&gt;</td>
+						</tr>
+						<tr id="StartupObject">
+							<td>スタートアップ オブジェクト</td>
+							<td>アプリケーションの読み込み時に呼び出されるエントリ ポイントを定義します。通常、これはアプリケーションのメイン フォームか、アプリケーションの起動時に実行する必要がある 'Main' プロシージャに設定されます。クラス ライブラリではエントリ ポイントが定義されていません。</td>
+							<td>StartupObject</td>
+							<td>&lt;StartupObject&gt; WinFormsApp1.Program &lt;/StartupObject&gt;</td>
+						</tr>
+						<tr id="AssemblyName">
+							<td>アセンブリ名</td>
+							<td>アセンブリ マニフェストを保持する出力ファイルの名前を指定します。</td>
+							<td>AssemblyName</td>
+							<td>&lt;AssemblyName&gt; $(MSBuildProjectName) &lt;/AssemblyName&gt;</td>
+						</tr>
+						<tr id="RootNamespace">
+							<td>既定の名前空間</td>
+							<td>プロジェクトに追加するファイルの基本名前空間を指定します。</td>
+							<td>RootNamespace</td>
+							<td>&lt;RootNamespace&gt; $(MSBuildProjectName.Replace (" ", "_")) &lt;/RootNamespace&gt;</td>
+						</tr>
+						<tr id="ApplicationIcon">
+							<td rowspan="4">アプリケーション Win32 リソース</td>
+							<td>アイコン</td>
+							<td>プログラム アイコンとして使用する .ico ファイルを設定します。</td>
+							<td>ApplicationIcon</td>
+							<td>&lt;ApplicationIcon&gt; Icon1.ico &lt;/ApplicationIcon&gt;</td>
+						</tr>
+						<tr>
+							<td>リソース</td>
+							<td>アプリケーション リソースの管理方法が指定されます。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>マニフェスト</td>
+							<td>アプリケーションがユーザー アカウント制御 (UAC) を使用して Windows Vista またはそれ以降で実行されるときに、マニフェスト生成オプションを選択します。オプションには、既定のマニフェスト、マニフェストなし、プロジェクトによって提供されるカスタム マニフェストが含まれます。</td>
+							<td>NoWin32Manifest</td>
+							<td>&lt;NoWin32Manifest&gt; true &lt;/NoWin32Manifest&gt;</td>
+						</tr>
+						<tr id="ApplicationManifest">
+							<td>マニフェスト パス</td>
+							<td>カスタム マニフェスト ファイルへのパスです。</td>
+							<td>ApplicationManifest</td>
+							<td>&lt;ApplicationManifest&gt; App.manifest &lt;/ApplicationManifest&gt;</td>
+						</tr>
+						<tr id="IsPublishable">
+							<td>アプリケーション パッケージ化</td>
+							<td>パブリッシュ</td>
+							<td>"dotnet publish" を使用するなど、Visual Studio 外でのパブリッシュを許可します。</td>
+							<td>IsPublishable</td>
+							<td>&lt;IsPublishable&gt; True &lt;/IsPublishable&gt;</td>
+						</tr>
+						<tr id="ImplicitUsings">
+							<td rowspan="2">Global Usings 全般</td>
+							<td>暗黙的な global using</td>
+							<td>プロジェクト SDK によって宣言される、暗黙的な global using を有効にします。</td>
+							<td>ImplicitUsings</td>
+							<td>&lt;ImplicitUsings&gt; enable &lt;/ImplicitUsings&gt;</td>
+						</tr>
+						<tr>
+							<td>暗黙的な global using を管理する</td>
+							<td>参照するプロジェクトの共通の global using ディレクティブを管理します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="7">ビルド全般</td>
+							<td>条件付きコンパイル シンボル</td>
+							<td>条件付きコンパイルを実行するためのシンボルを指定します。</td>
+							<td>DefineConstants</td>
+							<td>&lt;DefineConstants&gt; $(DefineConstants); AAA &lt;/DefineConstants&gt;</td>
+						</tr>
+						<tr>
+							<td>プラットフォーム ターゲット</td>
+							<td>出力ファイルの対象となるプロセッサを指定します。[すべての CPU] を選択すると、すべてのプロセッサが許容可能に指定され、アプリケーションを幅広いハードウェアで実行できるようになります。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Null 許容</td>
+							<td>プロジェクト全体での C# の null 許容コンテキストを指定します。C# 8.0 以降を使用するプロジェクトでのみ使用できます。</td>
+							<td>Nullable</td>
+							<td>&lt;Nullable&gt; enable &lt;/Nullable&gt;</td>
+						</tr>
+						<tr>
+							<td>アセンブリ情報の生成</td>
+							<td>ビルド中にプロジェクト プロパティをアセンブリ属性に変換します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>アンセーフ コード</td>
+							<td>'unsafe' キーワードを使用するコードをコンパイルできるようにします。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>コードの最適化</td>
+							<td>より小さく、高速で効率的な出力に向けて、コンパイラの最適化を有効にします。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>デバッグ シンボル</td>
+							<td>ビルド中に生成されたデバッグ シンボルの種類を指定します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="4">ビルド エラーおよび警告</td>
+							<td>警告レベル</td>
+							<td>コンパイラの警告で表示するレベルを指定します。レベルが高いほどより多くの警告が生成され、下位レベルのすべての警告が含まれます。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>警告の抑制</td>
+							<td>1 つ以上の警告を生成するコンパイラの機能をブロックします。複数の警告番号はコンマ (',') またはセミコロン (';') を使用して区切ります。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>警告をエラーとして扱う</td>
+							<td>警告をエラーとして扱うようコンパイラに指示します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>特定の警告をエラーとして扱う</td>
+							<td>指定された警告をエラーとして扱います。複数の警告番号はコンマ (',') またはセミコロン (';') を使用して区切ります。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="4">ビルド出力</td>
+							<td>基本出力パス</td>
+							<td>ビルド時のプロジェクトの出力の基本場所を指定します。プロジェクト構成を区別するために、サブフォルダーがこのパスに追加されます。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>基本中間出力パス</td>
+							<td>ビルド時のプロジェクトの中間出力の基本場所を指定します。プロジェクト構成を区別するために、サブフォルダーがこのパスに追加されます。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>参照アセンブリ</td>
+							<td>プロジェクトのパブリック API を含む参照アセンブリを生成します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>ドキュメント ファイル</td>
+							<td>API ドキュメントを含むファイルを生成します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="3">ビルド イベント</td>
+							<td>ビルド前のイベント</td>
+							<td>ビルドの開始前に実行されるコマンドを指定します。プロジェクトが最新の場合は実行されません。終了コードを 0 以外にすると、ビルドは実行前に失敗します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>ビルド後のイベント</td>
+							<td>ビルドの完了後に実行されるコマンドを指定します。ビルドに失敗した場合は実行されません。.bat ファイルを呼び出すには、 'call' を使用します。終了コードを 0 以外にすると、ビルドは失敗します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>ビルド後のイベントをいつ実行するか</td>
+							<td>ビルド後のイベントが実行される条件を指定します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>ビルド厳密な名前付け</td>
+							<td>アセンブリに署名する</td>
+							<td>出力アセンブリに署名して、厳密な名前を付けます。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="5">ビルド詳細</td>
+							<td>言語バージョン</td>
+							<td>このプロジェクトのコードで使用できる言語のバージョン。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>算術オーバーフローのチェック</td>
+							<td>整数演算で範囲外の値が算出された場合に例外を発生させます。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>決定論的</td>
+							<td>同一のコンパイル入力に対して同一のコンパイル出力を生成します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>内部コンパイラ エラーの報告</td>
+							<td>内部コンパイラ エラー (ICE) レポートを Microsoft に送信します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>ファイルの配置</td>
+							<td>出力ファイルのセクションを配置する位置をバイト単位で指定します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr id="GeneratePackageOnBuild">
+							<td rowspan="21">パッケージ全般</td>
+							<td>ビルド時に NuGet パッケージを生成</td>
+							<td>ビルド操作中にパッケージ ファイルを生成します。</td>
+							<td>GeneratePackageOnBuild</td>
+							<td>&lt;GeneratePackageOnBuild&gt; False &lt;/GeneratePackageOnBuild&gt;</td>
+						</tr>
+						<tr id="PackageId">
+							<td>パッケージ ID</td>
+							<td>nuget.org またはパッケージが存在するギャラリー内で一意である必要のある、大文字と小文字を区別しないパッケージ識別子。ID には、URL に無効なスペースや文字を含めることはできません。一般的に言って .NET 名前空間の規則に従います。</td>
+							<td>PackageId</td>
+							<td>&lt;PackageId&gt; $(AssemblyName) &lt;/PackageId&gt;</td>
+						</tr>
+						<tr id="Title">
+							<td>タイトル</td>
+							<td>一般的に UI で使用されるパッケージのわかりやすいタイトルは、nuget.org と Visual Studio のパッケージ マネージャーのように表示されます。</td>
+							<td>Title</td>
+							<td>&lt;Title&gt; Title &lt;/Title&gt;</td>
+						</tr>
+						<tr id="Version">
+							<td>パッケージ バージョン</td>
+							<td>major.minor.patch のパターンに従うパッケージのバージョン。バージョン番号にはプレリリースのサフィックスが含まれる場合があります。</td>
+							<td>Version</td>
+							<td>&lt;Version&gt; $(VersionPrefix) &lt;/Version&gt;</td>
+						</tr>
+						<tr id="Authors">
+							<td>作成者</td>
+							<td>nuget.org のプロファイル名に一致するパッケージ作成者のコンマ区切りリスト。これらは、nuget.org の NuGet ギャラリーに表示され、同じ作成者によるパッケージを相互参照するために使用されます。</td>
+							<td>Authors</td>
+							<td>&lt;Authors&gt; $(AssemblyName) &lt;/Authors&gt;</td>
+						</tr>
+						<tr id="Company">
+							<td>会社</td>
+							<td></td>
+							<td>Company</td>
+							<td>&lt;Company&gt; $(Authors) &lt;/Company&gt;</td>
+						</tr>
+						<tr id="Product">
+							<td>製品</td>
+							<td></td>
+							<td>Product</td>
+							<td>&lt;Product&gt; $(AssemblyName) &lt;/Product&gt;</td>
+						</tr>
+						<tr id="Description">
+							<td>説明</td>
+							<td>パッケージの UI 表示用の説明。</td>
+							<td>Description</td>
+							<td></td>
+						</tr>
+						<tr id="Copyright">
+							<td>著作権</td>
+							<td>パッケージの著作権の詳細。</td>
+							<td>Copyright</td>
+							<td></td>
+						</tr>
+						<tr id="PackageProjectUrl">
+							<td>プロジェクトの URL</td>
+							<td>UI 表示や nuget.org によく表示される、パッケージのホーム ページの URL。</td>
+							<td>PackageProjectUrl</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>アイコン</td>
+							<td>パッケージのアイコン画像。画像ファイルのサイズは 1 MB に制限されています。サポートされているファイル形式には、JPEG と PNG が含まれます。128 &Cross; 128 の画像解像度をお勧めします。</td>
+							<td>PackageIcon</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>README</td>
+							<td>パッケージの README ドキュメント。マークダウン (md) ファイルである必要があります。</td>
+							<td>PackageReadmeFile</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>リポジトリ URL</td>
+							<td>パッケージのソース コードが存在するか、そのビルド元となるリポジトリの URL を指定します。プロジェクト ページにリンクするには、代わりに [プロジェクトの URL] フィールドを使用します。</td>
+							<td>RepositoryUrl</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>リポジトリの種類</td>
+							<td>リポジトリの種類を指定します。既定値は 'git' です。</td>
+							<td>RepositoryType</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>タグ</td>
+							<td>パッケージについて説明するタグやキーワードをセミコロンで区切って並べたリスト。検索やフィルター処理でパッケージを見つけやすくするために使います。</td>
+							<td>PackageTags</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>リリース ノート</td>
+							<td>このリリースのパッケージで行われた変更の説明。Visual Studio パッケージ マネージャーの [更新] タブなどの UI で、パッケージの説明の代わりによく利用されます。</td>
+							<td>PackageReleaseNotes</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.NET ツールとしてパック</td>
+							<td>このプロジェクトを、"dotnet tool" コマンドでインストールできるコンソール アプリケーションを含む特別なパッケージとしてパックします。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>パッケージ出力パス</td>
+							<td>パッケージを削除する出力パスを決定します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>アセンブリ ニュートラル言語</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>アセンブリ バージョン</td>
+							<td></td>
+							<td>AssemblyVersion</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>ファイル バージョン</td>
+							<td></td>
+							<td>FileVersion</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>パッケージ ライセンス</td>
+							<td>パッケージ ライセンス</td>
+							<td>プロジェクトのパッケージのライセンスを指定します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>プロジェクト シンボル</td>
+							<td>シンボル パッケージを生成する</td>
+							<td>プロジェクトがパックされたときに、追加のシンボル パッケージを作成します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="2">Code Analysis すべてのアナライザー</td>
+							<td>ビルド時に実行</td>
+							<td>ビルド時は常にコード分析を実行します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>ライブ分析時に実行</td>
+							<td>入力中にエディターでコード分析を実行します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="3">Code Analysis .NET アナライザー</td>
+							<td>ビルド時にコード スタイルを適用する</td>
+							<td>ビルド時にコード スタイルに関する診断を作成します。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.NET アナライザーを有効にする</td>
+							<td>.NET アナライザーを実行して API の使用をサポートします。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>分析レベル</td>
+							<td>プロジェクトで実行する必要のある一連のアナライザー。</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>デバッグ全般</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>リソース全般</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</article>
+	</main>
+	<footer>
+		<ul>
+			<li>Copyright &copy; Taichi Murakami.</li>
+		</ul>
+	</footer>
+</body>
+</html>
